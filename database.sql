@@ -17,6 +17,16 @@ INSERT INTO "categories"
   ('whimsical');
 
 -- Favorites table:
+  CREATE TABLE "favorites" (
+  "id" serial PRIMARY KEY,
+  "title" VARCHAR (120),
+  "giphy_url" varchar(255) NOT NULL,
+  "categories_id" int REFERENCES "categories");
+  
+  INSERT INTO "favorites"
+  ("title","giphy_url", "categories_id")
+  VALUES 
+  ('Cray Thats Wild GIF by Originals', 'https://giphy.com/gifs/originals-dawnie-jefferson-thats-wild-that-is-UufAH7FSltoa7NzIKF', 1);
 
 -- You'll need a "favorites" table for storing each instance of
 -- a Giphy image that has been "favorited."

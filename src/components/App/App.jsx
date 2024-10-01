@@ -1,15 +1,82 @@
+import { GiphyFetch } from '@giphy/js-fetch-api';
+import axios from 'axios';
+import FavoritesView from '../FavoritesView/FavoritesView';
+
+
+
+// async function performSearch(query) {
+//   const apiKey = 'MX7BzYFvAD1qPWhJCg9WQTTkpBzn8DrT';
+//   const url = `http://api.giphy.com/v1/gifs/search?q=${encodeURIComponent(query)}&api_key=${apiKey}&limit=5`;
+  
+//   try {
+//       const response = await fetch(url);
+//       const data = await response.json();
+//       displayResults(data.data);
+//   } catch (error) {
+//       vscode.window.showErrorMessage('Error fetching GIFs');
+//   }
+// }
+
+// function displayResults(gifs) {
+//   panel.webview.postMessage({
+//       command: 'displayResults',
+//       gifs: gifs
+//   });
+// }
+
+/*  const [giphy, setGiphy] = useState([]);
+
+useEffect(() => {
+  axios.get(`http://api.giphy.com/v1/gifs/search?q=${encodeURIComponent(query)}&api_key=${apiKey}&limit=10`).then(response => {
+    setGiphy(response.data.results);
+  }).catch((error) => {
+    console.log(error);
+    alert('Something went wrong.');
+  })
+}, []);
+*/
+
+
+
 function App() {
+
+
+const apikey = new GiphyFetch('MX7BzYFvAD1qPWhJCg9WQTTkpBzn8DrT');
+
+
+const search = async () => {
+  try {
+    const result = await gf.search("dogs", { sort: "recent" });
+    console.log(`search`, result);
+  } catch (error) {
+    console.error(`search`, error);
+  }
+};
+
+
+  const giphyApiCall = () => {
+   axios.get(`http://api.giphy.com/v1/gifs/search?api_key=`MX7BzYFvAD1qPWhJCg9WQ`)
+   .then((response) => {
+
+   })
+   .catch((error) => {
+    console.log(error)
+   })
+}
+
   return (
     <div>
       <h1>Giphy Search!</h1>
 
       <h2>Search View</h2>
-      <input></input>
+
+      
+
       <button type="submit">Search</button>
 
-      <h2>Favorites View</h2>
-      <li>Images will display here</li>
-      <button>Like</button> This button will do a "post" to the database for favorites
+
+    <FavoritesView />
+
     </div>
   );
 }
