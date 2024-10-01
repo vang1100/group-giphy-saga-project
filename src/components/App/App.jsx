@@ -5,7 +5,7 @@ import FavoritesView from '../FavoritesView/FavoritesView';
 
 
 // async function performSearch(query) {
-//   const apiKey = 'MX7BzYFvAD1qPWhJCg9WQTTkpBzn8DrT';
+//   const apiKey = 'X6HYkiiUqmfjBpMPsmQyVwjLcPSrIsJo';
 //   const url = `http://api.giphy.com/v1/gifs/search?q=${encodeURIComponent(query)}&api_key=${apiKey}&limit=5`;
   
 //   try {
@@ -41,7 +41,7 @@ useEffect(() => {
 function App() {
 
 
-const apikey = new GiphyFetch('MX7BzYFvAD1qPWhJCg9WQTTkpBzn8DrT');
+const apikey = new GiphyFetch('X6HYkiiUqmfjBpMPsmQyVwjLcPSrIsJo');
 
 
 const search = async () => {
@@ -54,32 +54,32 @@ const search = async () => {
 };
 
 
-  const giphyApiCall = () => {
-   axios.get(`http://api.giphy.com/v1/gifs/search?api_key=`MX7BzYFvAD1qPWhJCg9WQ`)
-   .then((response) => {
+//   const giphyApiCall = () => {
+//    axios.get(`http://api.giphy.com/v1/gifs/search?api_key=`X6HYkiiUqmfjBpMPsmQyVwjLcPSrIsJo`)
+//    .then((response) => {
 
-   })
-   .catch((error) => {
-    console.log(error)
-   })
-}
+//    })
+//    .catch((error) => {
+//     console.log(error)
+//    })
+// }
 
-  return (
-    <div>
-      <h1>Giphy Search!</h1>
+//   return (
+//     <div>
+//       <h1>Giphy Search!</h1>
 
-      <h2>Search View</h2>
+//       <h2>Search View</h2>
 
       
 
-      <button type="submit">Search</button>
+//       <button type="submit">Search</button>
 
 
-    <FavoritesView />
+//     <FavoritesView />
 
-    </div>
-  );
-}
+//     </div>
+//   );
+// }
 
 
-export default App;
+// export default App;
